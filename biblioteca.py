@@ -47,5 +47,16 @@ def main():
 
          if opcion == "1":
              agregar_libro(biblioteca)
-elif opcion == "2"    
+         elif opcion == "2":
+             prestar_libro(biblioteca)
+         elif opcion == "3":
+             devolver_libro(biblioteca)
+         elif opcion == "4":
+             print("Saliendo del programa ")
+             break
+         else:
+             print("Opcion no valida. Seleccione la opcion correcta ")
 
+if __name__ == "__main__":
+    main()
+    
