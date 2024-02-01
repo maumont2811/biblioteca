@@ -31,4 +31,12 @@ def devolver_libro (biblioteca):
             print(f'Libro "{titulo}" devuelto exitosamente.')
             encontrado = True
             break 
-    if nott encotrando:
+    if not encontrado:
+        print(f'No se puede devolver el libro "(titulo)".')
+
+def main():
+    biblioteca = []
+
+    while true:
+         print("\1. agregar libro")
+         print("2. ")
