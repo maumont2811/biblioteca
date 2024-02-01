@@ -26,4 +26,9 @@ def devolver_libro (biblioteca):
     titulo = input("Ingrese el titulo del libro a devolver: ")
     encontrado = False
     for libro in biblioteca:
-        if 
+        if libro["titulo"] == titulo and not libro["disponiblidad"]:
+            libro["disponibilidad"] = True
+            print(f'Libro "{titulo}" devuelto exitosamente.')
+            encontrado = True
+            break 
+    if nott encotrando:
