@@ -39,4 +39,13 @@ def main():
 
     while true:
          print("\1. agregar libro")
-         print("2. ")
+         print("2. pedir prestado el libro")
+         print("3. devolver libro")
+         print("4. Salir")
+
+         opcion = input("selecciona una opcion: ")
+
+         if opcion == "1":
+             agregar_libro(biblioteca)
+elif opcion == "2"    
+
