@@ -1,6 +1,6 @@
 #Cohesión_y_acomplamiento.
+#definimos_primero_la_cohesión.
 
-#definimos_primero.
 def agregar_libro(biblioteca):
     titulo = input("Ingrese el titulo del libro:")
     autor = input("Ingrese el autor del libro: ")
@@ -33,6 +33,8 @@ def devolver_libro (biblioteca):
             break 
     if not encontrado:
         print(f'No se puede devolver el libro "(titulo)".')
+
+#acoplamiento 
 
 def main():
     biblioteca = []
