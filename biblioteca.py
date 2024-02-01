@@ -38,7 +38,7 @@ def main():
     biblioteca = []
 
     while true:
-         print("\1. agregar libro")
+         print("\n1. agregar libro")
          print("2. pedir prestado el libro")
          print("3. devolver libro")
          print("4. Salir")
@@ -59,4 +59,3 @@ def main():
 
 if __name__ == "__main__":
     main()
-    
