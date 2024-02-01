@@ -39,7 +39,7 @@ def devolver_libro (biblioteca):
 def main():
     biblioteca = []
 
-    while true:
+    while True:
          print("\n1. agregar libro")
          print("2. pedir prestado el libro")
          print("3. devolver libro")
