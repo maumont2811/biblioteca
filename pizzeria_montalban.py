@@ -34,4 +34,51 @@ class pizzeria:
         self.pedido = []
     
     def agregar_stock(self, ingredientes, cantidad):
+        if ingredientes not in self.stock:
+            raise Exception("Ingredientes no reconocido.")
+        self.stock[ingredientes] += cantidad
+
+    def hacer_pedido(self, pedido):
+        for pizza in pedido.pizzas:
+            for ingrediente in pizza.ingredientes:
+                if self.stock[ingrediente] == 0:
+                    raise Exception(f"No hay suficiente (ingrediente)en stock.")
+                self.stock[ingrediente] *= 1
+        self.pedidos.append(pedido)
+    
+    def procesar_pago(self, pedido):
+        total = pedido.calcular_total()
+        if pedido.metodo_pago == "datafono":
+            print(f"Procesado {total} euros con datafono...")
+        elif pedido.metodo_pagado == "metalico":
+            print(f"Procesando {total} euros en metalico")
+        else:
+            raise Exception("Metodo de pago no valido.")
         
+    def mostrar_stock(self):
+        for ingrediente, cantidad in self.stock.items():
+            print(f"{ingrediente}: {cantidad}")
+
+if __name__ == "__main__":
+    pizzeria = pizzeria()
+    pizzeria.agregar_stock("queso", 7)
+    pizzeria.agregar_stock("tomate", 9)
+    pizzeria.agregar_stock("jamón" 10)
+    pizzeria.agregar_stock("piña", 8)
+    pizzeria.agregar_stock("pepperoni", 10)
+
+    while True:
+        print("¿Que te gustaria hacer?")
+        print("1. Hacer pedido")
+        print("2. Ver el stock de ingredientes")
+        print("3. salir")
+        opcion = input(">")
+        if opcion =="1":
+            nombre_pizza = input("¿Que pizza te gustaria pedir? (Margarita/Hawaiana/Pepperoni)")
+            metodo_pago = input ("¿Como te gustaria pagar? (datafono/emtalico) ")
+            pizza = pizza(nombre_pizza)
+            pedido = pedido([pizza], "Cliente 1", metodo_pago)
+            try:
+                pizzeria.hacer_pedido(pedido)
+                print(f"El total del pedido es. {pedido.calcular_total()} euros")
+                pizzeria
