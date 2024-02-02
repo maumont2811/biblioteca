@@ -75,7 +75,7 @@ if __name__ == "__main__":
         opcion = input(">")
         if opcion =="1":
             nombre_pizza = input("¿Que pizza te gustaria pedir? (Margarita/Hawaiana/Pepperoni)")
-            metodo_pago = input ("¿Como te gustaria pagar? (datafono/emtalico) ")
+            metodo_pago = input ("¿Como te gustaria pagar? (datafono/metalico) ")
             pizza = pizza(nombre_pizza)
             pedido = pedido([pizza], "Cliente 1", metodo_pago)
             try:
