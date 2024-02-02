@@ -35,7 +35,7 @@ class pizzeria:
     
     def agregar_stock(self, ingredientes, cantidad):
         if ingredientes not in self.stock:
-            raise Exception("Ingredientes no reconocido.")
+            raise Exception("Ingrediente no reconocido.")
         self.stock[ingredientes] += cantidad
 
     def hacer_pedido(self, pedido):
@@ -63,7 +63,7 @@ if __name__ == "__main__":
     pizzeria = pizzeria()
     pizzeria.agregar_stock("queso", 7)
     pizzeria.agregar_stock("tomate", 9)
-    pizzeria.agregar_stock("jamón" 10)
+    pizzeria.agregar_stock("jamón", 10)
     pizzeria.agregar_stock("piña", 8)
     pizzeria.agregar_stock("pepperoni", 10)
 
@@ -81,4 +81,12 @@ if __name__ == "__main__":
             try:
                 pizzeria.hacer_pedido(pedido)
                 print(f"El total del pedido es. {pedido.calcular_total()} euros")
-                pizzeria
+                pizzeria.procesar_pago(pedido)
+            except Exception as e:
+                print(f"Error: {str(e)}")
+        elif opcion == "2":
+            pizzeria.mostrar_stock()
+        elif opcion == "3":
+            break
+        else:
+            print("Opcion no válida.")
