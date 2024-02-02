@@ -8,8 +8,8 @@ class Pizza:
         if nombre == "Margarita":
             self.ingredientes = ["queso", "tomate"]
             self.precio = 8.0 
-        elif nombre == "hawaina":
-            self.ingredientes = ["queso", "tomate", "jamon", "piña"]
+        elif nombre == "Hawaiana":
+            self.ingredientes = ["queso", "tomate", "jamón", "piña"]
             self.precio = 9.5
         elif nombre == "Pepperoni":
             self.ingredientes = ["queso", "tomate", "pepperoni"]
