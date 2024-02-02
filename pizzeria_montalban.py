@@ -30,20 +30,20 @@ class pedido:
 
 class pizzeria:
     def __init__(self):
-        self.stock = {"queso":0, "tomate":0, "jamon":0, "piña":0, "pepperoni":0}
+        self.stock = {"queso":0, "tomate":0, "jamón":0, "piña":0, "pepperoni":0}
         self.pedido = []
-    
-    def agregar_stock(self, ingredientes, cantidad):
-        if ingredientes not in self.stock:
+
+    def agregar_stock(self, ingrediente, cantidad):
+        if ingrediente not in self.stock:
             raise Exception("Ingrediente no reconocido.")
-        self.stock[ingredientes] += cantidad
+        self.stock[ingrediente] += cantidad
 
     def hacer_pedido(self, pedido):
         for pizza in pedido.pizzas:
             for ingrediente in pizza.ingredientes:
                 if self.stock[ingrediente] == 0:
                     raise Exception(f"No hay suficiente (ingrediente)en stock.")
-                self.stock[ingrediente] *= 1
+                self.stock[ingrediente] -= 1
         self.pedidos.append(pedido)
     
     def procesar_pago(self, pedido):
